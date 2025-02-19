@@ -1,7 +1,12 @@
+"""
+Este app.py es el script primario para desarrollar una aplicación web 
+usando streamlit para albergarla en Render.
+"""
+import time
+
 import pandas as pd
 import scipy.stats
 import streamlit as st
-import time
 
 # estas son variables de estado que se conservan cuando Streamlin vuelve a ejecutar este script
 if 'experiment_no' not in st.session_state:
@@ -15,10 +20,13 @@ st.header('Lanzar una moneda')
 chart = st.line_chart([0.5])
 
 def toss_coin(n):
+    """
+    Este módulo es para emular n tiros de monedas 
+    """
 
     trial_outcomes = scipy.stats.bernoulli.rvs(p=0.5, size=n)
 
-    mean = None
+    mean_ = None
     outcome_no = 0
     outcome_1_count = 0
 
@@ -26,11 +34,11 @@ def toss_coin(n):
         outcome_no +=1
         if r == 1:
             outcome_1_count += 1
-        mean = outcome_1_count / outcome_no
-        chart.add_rows([mean])
+        mean_ = outcome_1_count / outcome_no
+        chart.add_rows([mean_])
         time.sleep(0.05)
 
-    return mean
+    return mean_
 
 number_of_trials = st.slider('¿Número de intentos?', 1, 1000, 10)
 start_button = st.button('Ejecutar')
@@ -47,6 +55,7 @@ if start_button:
                      columns=['no', 'iterations', 'mean'])
         ],
         axis=0)
-    st.session_state['df_experiment_results'] = st.session_state['df_experiment_results'].reset_index(drop=True)
+    st.session_state['df_experiment_results'] = st.session_state[
+        'df_experiment_results'].reset_index(drop=True)
 
 st.write(st.session_state['df_experiment_results'])
