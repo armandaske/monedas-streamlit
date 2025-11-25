@@ -10,7 +10,7 @@ The app shows how the empirical mean converges to the theoretical probability (0
 ## 🚀 Live Demo  
 
 Run the app instantly on Render:  
-👉 **https://**
+👉 **https://monedas-streamlit.onrender.com**
 
 ---
 
