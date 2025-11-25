@@ -45,13 +45,21 @@ It uses **Python**, **NumPy**, and **Matplotlib** to calculate and plot the freq
 ## 🛠️ Installation
 
 Clone the repository:  
-    git clone https://github.com/armandaske/monedas-streamlit.git  
-    cd monedas-streamlit  
-    
-
+```bash
+git clone https://github.com/armandaske/monedas-streamlit.git
+cd monedas-streamlit    
+```
 Install dependencies:  
-    pip install -r requirements.txt  
+   
+  ```bash
+   pip install -r requirements.txt    
+  ```
     
 
 Run the app:  
     streamlit run app.py  or  python -m streamlit run app.py
+    ```bash  
+    
+      git clone https://github.com/armandaske/monedas-streamlit.git
+      cd monedas-streamlit
+    ```
